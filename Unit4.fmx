@@ -1,0 +1,38 @@
+object Form4: TForm4
+  Left = 0
+  Top = 0
+  Caption = 'Form4'
+  ClientHeight = 214
+  ClientWidth = 437
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Label1: TLabel
+    Anchors = [akLeft, akTop, akRight]
+    Position.X = 16.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 297.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Label1'
+  end
+  object TetheringManager1: TTetheringManager
+    OnPairedFromLocal = TetheringManager1PairedFromLocal
+    Password = 'The wingless dove protects its nest'
+    Text = 'TetheringManager1'
+    AllowedAdapters = 'Network'
+    Left = 136
+    Top = 160
+  end
+  object TetheringAppProfile1: TTetheringAppProfile
+    Manager = TetheringManager1
+    Text = 'TetheringAppProfile1'
+    Group = 'TestGroup'
+    Actions = <>
+    Resources = <>
+    Left = 136
+    Top = 112
+  end
+end

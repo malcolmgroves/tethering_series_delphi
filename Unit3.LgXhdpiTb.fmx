@@ -1,0 +1,19 @@
+inherited Form3_LgXhdpiTb: TForm3_LgXhdpiTb
+  ClientHeight = 829
+  ClientWidth = 480
+  DesignerMasterStyle = 0
+  inherited Label1: TLabel
+    Position.Y = 26.000000000000000000
+    Size.Width = 649.000000000000000000
+  end
+  inherited TetheringAppProfile1: TTetheringAppProfile
+    Actions = <
+      item
+        Name = 'actReset'
+        IsPublic = True
+        NotifyUpdates = True
+      end>
+    Left = 448
+    Top = 120
+  end
+end
