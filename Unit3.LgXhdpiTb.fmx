@@ -37,14 +37,28 @@ inherited Form3_LgXhdpiTb: TForm3_LgXhdpiTb
     Size.Height = 703.000000000000000000
     Size.PlatformDefault = False
   end
+  inherited Button3: TButton
+    Anchors = [akLeft, akTop, akRight]
+    Position.X = 768.000000000000000000
+    Size.Width = -301.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+  end
   inherited TetheringAppProfile1: TTetheringAppProfile
     Actions = <
       item
         Name = 'actReset'
         IsPublic = True
+        Action = actReset
         NotifyUpdates = True
       end>
     Left = 448
     Top = 120
+  end
+  inherited ActionList1: TActionList
+    inherited actReset: TAction
+      OnExecute = nil
+      OnUpdate = nil
+    end
   end
 end

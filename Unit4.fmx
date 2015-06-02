@@ -67,6 +67,18 @@ object Form4: TForm4
     Left = 320
     Top = 120
   end
+  object Button2: TButton
+    Action = Action1
+    Enabled = True
+    ImageIndex = -1
+    Position.X = 320.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 104.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    Visible = True
+  end
   object TetheringManager1: TTetheringManager
     OnPairedFromLocal = TetheringManager1PairedFromLocal
     Password = 'The wingless dove protects its nest'
@@ -79,7 +91,14 @@ object Form4: TForm4
     Manager = TetheringManager1
     Text = 'TetheringAppProfile1'
     Group = 'TestGroup'
-    Actions = <>
+    Actions = <
+      item
+        Name = 'lactReset'
+        IsPublic = True
+        Kind = Mirror
+        Action = Action1
+        NotifyUpdates = False
+      end>
     Resources = <
       item
         Name = 'SomeText'
@@ -96,5 +115,12 @@ object Form4: TForm4
       end>
     Left = 136
     Top = 112
+  end
+  object ActionList1: TActionList
+    Left = 360
+    Top = 168
+    object Action1: TAction
+      Text = 'Action1'
+    end
   end
 end

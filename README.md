@@ -10,4 +10,5 @@ Source is tagged to match each article:
 * Discovery and Pairing - [Source](https://github.com/malcolmgroves/tethering_series_delphi/releases/tag/2.DiscoveryAndPairing)
 * Sharing Persistent Resources Part 1 - [Source](https://github.com/malcolmgroves/tethering_series_delphi/releases/tag/3.PersistentResourcesPart1)
 * Sharing Persistent Resources Part 2 - [Source](https://github.com/malcolmgroves/tethering_series_delphi/releases/tag/4.PersistentResourcesPart2)
-* ShHring Transient Resources - [Source](https://github.com/malcolmgroves/tethering_series_delphi/releases/tag/5.TransientResources) 
+* Sharing Transient Resources - [Source](https://github.com/malcolmgroves/tethering_series_delphi/releases/tag/5.TransientResources) 
+* Sharing Actions - Source

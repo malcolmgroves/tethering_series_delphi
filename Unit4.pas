@@ -21,6 +21,9 @@ type
     Button1: TButton;
     ImageControl2: TImageControl;
     OpenDialog1: TOpenDialog;
+    Button2: TButton;
+    ActionList1: TActionList;
+    Action1: TAction;
     procedure FormCreate(Sender: TObject);
     procedure TetheringManager1PairedFromLocal(const Sender: TObject;
       const AManagerInfo: TTetheringManagerInfo);

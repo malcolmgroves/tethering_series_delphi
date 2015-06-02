@@ -17,10 +17,9 @@ object Form3: TForm3
     OnClick = Button1Click
   end
   object Label1: TLabel
-    Anchors = [akLeft, akTop, akRight]
     Position.X = 112.000000000000000000
     Position.Y = 18.000000000000000000
-    Size.Width = 305.000000000000000000
+    Size.Width = 193.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     Text = 'Label1'
@@ -73,6 +72,15 @@ object Form3: TForm3
     Position.Y = 112.000000000000000000
     TabOrder = 14
   end
+  object Button3: TButton
+    Action = actReset
+    Enabled = True
+    ImageIndex = -1
+    Position.X = 336.000000000000000000
+    Position.Y = 16.000000000000000000
+    TabOrder = 19
+    Visible = True
+  end
   object TetheringManager1: TTetheringManager
     OnPairedToRemote = TetheringManager1PairedToRemote
     OnRequestManagerPassword = TetheringManager1RequestManagerPassword
@@ -85,7 +93,13 @@ object Form3: TForm3
     Manager = TetheringManager1
     Text = 'TetheringAppProfile1'
     Group = 'TestGroup'
-    Actions = <>
+    Actions = <
+      item
+        Name = 'lactReset'
+        IsPublic = True
+        Action = actReset
+        NotifyUpdates = False
+      end>
     Resources = <
       item
         Name = 'SomeText'
@@ -103,5 +117,10 @@ object Form3: TForm3
   object ActionList1: TActionList
     Left = 368
     Top = 80
+    object actReset: TAction
+      Text = 'Reset'
+      OnExecute = actResetExecute
+      OnUpdate = actResetUpdate
+    end
   end
 end

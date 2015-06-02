@@ -22,6 +22,8 @@ type
     Label2: TLabel;
     ImageControl2: TImageControl;
     ActionList1: TActionList;
+    actReset: TAction;
+    Button3: TButton;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure TetheringManager1PairedToRemote(const Sender: TObject;
@@ -32,6 +34,8 @@ type
     procedure Button2Click(Sender: TObject);
     procedure TetheringAppProfile1ResourceReceived(const Sender: TObject;
       const AResource: TRemoteResource);
+    procedure actResetExecute(Sender: TObject);
+    procedure actResetUpdate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,6 +49,18 @@ implementation
 
 {$R *.fmx}
 {$R *.LgXhdpiTb.fmx ANDROID}
+
+procedure TForm3.actResetExecute(Sender: TObject);
+begin
+  Edit1.Text := '';
+  Label2.Text := '';
+end;
+
+procedure TForm3.actResetUpdate(Sender: TObject);
+begin
+  actReset.Enabled := (Edit1.Text <> '') OR
+                      (Label2.Text <> '');
+end;
 
 procedure TForm3.Button1Click(Sender: TObject);
 begin
