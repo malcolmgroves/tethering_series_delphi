@@ -19,18 +19,53 @@ object Form4: TForm4
     Text = 'Label1'
   end
   object Label2: TLabel
-    Anchors = [akLeft, akTop, akRight]
     Position.X = 16.000000000000000000
     Position.Y = 48.000000000000000000
-    Size.Width = 409.000000000000000000
-    Size.Height = 17.000000000000000000
-    Size.PlatformDefault = False
     Text = 'Label2'
   end
   object ImageControl1: TImageControl
     Position.X = 16.000000000000000000
     Position.Y = 88.000000000000000000
     TabOrder = 2
+  end
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 5
+    Position.X = 152.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 273.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TextPrompt = 'ReplyText'
+    object EditButton1: TEditButton
+      CanFocus = False
+      Cursor = crArrow
+      Size.Width = 103.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Send Transient'
+      OnClick = EditButton1Click
+    end
+  end
+  object Button1: TButton
+    Position.X = 320.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = 'Send Transient'
+    OnClick = Button1Click
+  end
+  object ImageControl2: TImageControl
+    Position.X = 216.000000000000000000
+    Position.Y = 88.000000000000000000
+    TabOrder = 7
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 320
+    Top = 120
   end
   object TetheringManager1: TTetheringManager
     OnPairedFromLocal = TetheringManager1PairedFromLocal

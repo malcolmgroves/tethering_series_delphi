@@ -61,6 +61,18 @@ object Form3: TForm3
     Left = 368
     Top = 136
   end
+  object Label2: TLabel
+    Position.X = 248.000000000000000000
+    Position.Y = 58.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object ImageControl2: TImageControl
+    Position.X = 224.000000000000000000
+    Position.Y = 112.000000000000000000
+    TabOrder = 14
+  end
   object TetheringManager1: TTetheringManager
     OnPairedToRemote = TetheringManager1PairedToRemote
     OnRequestManagerPassword = TetheringManager1RequestManagerPassword
@@ -84,7 +96,12 @@ object Form3: TForm3
         IsPublic = True
         ResType = Stream
       end>
+    OnResourceReceived = TetheringAppProfile1ResourceReceived
     Left = 256
     Top = 128
+  end
+  object ActionList1: TActionList
+    Left = 368
+    Top = 80
   end
 end

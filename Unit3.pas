@@ -19,6 +19,9 @@ type
     ImageControl1: TImageControl;
     Button2: TButton;
     OpenDialog1: TOpenDialog;
+    Label2: TLabel;
+    ImageControl2: TImageControl;
+    ActionList1: TActionList;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure TetheringManager1PairedToRemote(const Sender: TObject;
@@ -27,6 +30,8 @@ type
       const ARemoteIdentifier: string; var Password: string);
     procedure EditButton1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure TetheringAppProfile1ResourceReceived(const Sender: TObject;
+      const AResource: TRemoteResource);
   private
     { Private declarations }
   public
@@ -70,6 +75,20 @@ end;
 procedure TForm3.FormCreate(Sender: TObject);
 begin
   Caption := Format('App1 : %s', [TetheringManager1.Identifier]);
+end;
+
+procedure TForm3.TetheringAppProfile1ResourceReceived(const Sender: TObject;
+  const AResource: TRemoteResource);
+begin
+  if AResource.Hint = 'ReplyText' then
+  begin
+    Label2.Text := AResource.Value.AsString;
+  end
+  else if AResource.Hint = 'ReplyImage' then
+  begin
+    AResource.Value.AsStream.Position := 0;
+    ImageControl2.Bitmap.LoadFromStream(AResource.Value.AsStream);
+  end;
 end;
 
 procedure TForm3.TetheringManager1PairedToRemote(const Sender: TObject;

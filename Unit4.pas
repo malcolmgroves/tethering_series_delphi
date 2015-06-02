@@ -16,6 +16,11 @@ type
     Label1: TLabel;
     Label2: TLabel;
     ImageControl1: TImageControl;
+    Edit1: TEdit;
+    EditButton1: TEditButton;
+    Button1: TButton;
+    ImageControl2: TImageControl;
+    OpenDialog1: TOpenDialog;
     procedure FormCreate(Sender: TObject);
     procedure TetheringManager1PairedFromLocal(const Sender: TObject;
       const AManagerInfo: TTetheringManagerInfo);
@@ -23,6 +28,8 @@ type
       const Sender: TObject; const AResource: TRemoteResource);
     procedure TetheringAppProfile1Resources1ResourceReceived(
       const Sender: TObject; const AResource: TRemoteResource);
+    procedure EditButton1Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -35,6 +42,31 @@ var
 implementation
 
 {$R *.fmx}
+
+procedure TForm4.Button1Click(Sender: TObject);
+var
+  LStream : TMemoryStream;
+begin
+  if OpenDialog1.Execute then
+  begin
+    ImageControl2.LoadFromFile(OpenDialog1.FileName);
+
+    LStream := TMemoryStream.Create;
+    ImageControl2.Bitmap.SaveToStream(LStream);
+    LStream.Position := 0;
+    TetheringAppProfile1.SendStream(TetheringManager1.RemoteProfiles.First,
+                                    'ReplyImage',
+                                    LStream);
+  end;
+end;
+
+
+procedure TForm4.EditButton1Click(Sender: TObject);
+begin
+  TetheringAppProfile1.SendString(TetheringManager1.RemoteProfiles.First,
+                                  'ReplyText',
+                                  Edit1.Text);
+end;
 
 procedure TForm4.FormCreate(Sender: TObject);
 begin
