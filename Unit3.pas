@@ -14,12 +14,15 @@ type
     TetheringAppProfile1: TTetheringAppProfile;
     Button1: TButton;
     Label1: TLabel;
+    Edit1: TEdit;
+    EditButton1: TEditButton;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure TetheringManager1PairedToRemote(const Sender: TObject;
       const AManagerInfo: TTetheringManagerInfo);
     procedure TetheringManager1RequestManagerPassword(const Sender: TObject;
       const ARemoteIdentifier: string; var Password: string);
+    procedure EditButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,6 +40,11 @@ implementation
 procedure TForm3.Button1Click(Sender: TObject);
 begin
   TetheringManager1.AutoConnect;
+end;
+
+procedure TForm3.EditButton1Click(Sender: TObject);
+begin
+  TetheringAppProfile1.Resources.FindByName('SomeText').Value := Edit1.Text;
 end;
 
 procedure TForm3.FormCreate(Sender: TObject);

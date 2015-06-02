@@ -6,6 +6,14 @@ inherited Form3_LgXhdpiTb: TForm3_LgXhdpiTb
     Position.Y = 26.000000000000000000
     Size.Width = 649.000000000000000000
   end
+  inherited Edit1: TEdit
+    Size.Width = 433.000000000000000000
+    Size.Height = 32.000000000000000000
+    inherited EditButton1: TEditButton
+      Size.Width = 108.000000000000000000
+      Size.Height = 28.000000000000000000
+    end
+  end
   inherited TetheringAppProfile1: TTetheringAppProfile
     Actions = <
       item

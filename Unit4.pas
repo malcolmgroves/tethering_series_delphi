@@ -14,9 +14,12 @@ type
     TetheringManager1: TTetheringManager;
     TetheringAppProfile1: TTetheringAppProfile;
     Label1: TLabel;
+    Label2: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure TetheringManager1PairedFromLocal(const Sender: TObject;
       const AManagerInfo: TTetheringManagerInfo);
+    procedure TetheringAppProfile1Resources0ResourceReceived(
+      const Sender: TObject; const AResource: TRemoteResource);
   private
     { Private declarations }
   public
@@ -33,6 +36,12 @@ implementation
 procedure TForm4.FormCreate(Sender: TObject);
 begin
   Caption := Format('App2 : %s', [TetheringManager1.Identifier]);
+end;
+
+procedure TForm4.TetheringAppProfile1Resources0ResourceReceived(
+  const Sender: TObject; const AResource: TRemoteResource);
+begin
+  Label2.Text := AResource.Value.AsString;
 end;
 
 procedure TForm4.TetheringManager1PairedFromLocal(const Sender: TObject;

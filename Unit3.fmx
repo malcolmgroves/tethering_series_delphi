@@ -25,6 +25,26 @@ object Form3: TForm3
     Size.PlatformDefault = False
     Text = 'Label1'
   end
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 5
+    Position.X = 16.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 225.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TextPrompt = 'SomeText'
+    object EditButton1: TEditButton
+      CanFocus = False
+      Cursor = crArrow
+      Size.Width = 52.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Update'
+      OnClick = EditButton1Click
+    end
+  end
   object TetheringManager1: TTetheringManager
     OnPairedToRemote = TetheringManager1PairedToRemote
     OnRequestManagerPassword = TetheringManager1RequestManagerPassword
@@ -38,7 +58,11 @@ object Form3: TForm3
     Text = 'TetheringAppProfile1'
     Group = 'TestGroup'
     Actions = <>
-    Resources = <>
+    Resources = <
+      item
+        Name = 'SomeText'
+        IsPublic = True
+      end>
     Left = 256
     Top = 128
   end
