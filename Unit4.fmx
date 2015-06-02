@@ -27,6 +27,11 @@ object Form4: TForm4
     Size.PlatformDefault = False
     Text = 'Label2'
   end
+  object ImageControl1: TImageControl
+    Position.X = 16.000000000000000000
+    Position.Y = 88.000000000000000000
+    TabOrder = 2
+  end
   object TetheringManager1: TTetheringManager
     OnPairedFromLocal = TetheringManager1PairedFromLocal
     Password = 'The wingless dove protects its nest'
@@ -46,6 +51,13 @@ object Form4: TForm4
         IsPublic = True
         Kind = Mirror
         OnResourceReceived = TetheringAppProfile1Resources0ResourceReceived
+      end
+      item
+        Name = 'SomeImage'
+        IsPublic = True
+        Kind = Mirror
+        ResType = Stream
+        OnResourceReceived = TetheringAppProfile1Resources1ResourceReceived
       end>
     Left = 136
     Top = 112

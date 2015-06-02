@@ -16,6 +16,9 @@ type
     Label1: TLabel;
     Edit1: TEdit;
     EditButton1: TEditButton;
+    ImageControl1: TImageControl;
+    Button2: TButton;
+    OpenDialog1: TOpenDialog;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure TetheringManager1PairedToRemote(const Sender: TObject;
@@ -23,6 +26,7 @@ type
     procedure TetheringManager1RequestManagerPassword(const Sender: TObject;
       const ARemoteIdentifier: string; var Password: string);
     procedure EditButton1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,6 +44,22 @@ implementation
 procedure TForm3.Button1Click(Sender: TObject);
 begin
   TetheringManager1.AutoConnect;
+end;
+
+procedure TForm3.Button2Click(Sender: TObject);
+var
+  LStream : TMemoryStream;
+begin
+  if OpenDialog1.Execute then
+  begin
+    ImageControl1.LoadFromFile(OpenDialog1.FileName);
+
+    Lstream := TMemoryStream.Create;
+    ImageControl1.Bitmap.SaveToStream(LStream);
+    LStream.Position := 0;
+
+    TetheringAppProfile1.Resources.FindByName('SomeImage').Value := LStream;
+  end;
 end;
 
 procedure TForm3.EditButton1Click(Sender: TObject);

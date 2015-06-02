@@ -15,10 +15,13 @@ type
     TetheringAppProfile1: TTetheringAppProfile;
     Label1: TLabel;
     Label2: TLabel;
+    ImageControl1: TImageControl;
     procedure FormCreate(Sender: TObject);
     procedure TetheringManager1PairedFromLocal(const Sender: TObject;
       const AManagerInfo: TTetheringManagerInfo);
     procedure TetheringAppProfile1Resources0ResourceReceived(
+      const Sender: TObject; const AResource: TRemoteResource);
+    procedure TetheringAppProfile1Resources1ResourceReceived(
       const Sender: TObject; const AResource: TRemoteResource);
   private
     { Private declarations }
@@ -42,6 +45,13 @@ procedure TForm4.TetheringAppProfile1Resources0ResourceReceived(
   const Sender: TObject; const AResource: TRemoteResource);
 begin
   Label2.Text := AResource.Value.AsString;
+end;
+
+procedure TForm4.TetheringAppProfile1Resources1ResourceReceived(
+  const Sender: TObject; const AResource: TRemoteResource);
+begin
+  Aresource.Value.AsStream.Position := 0;
+  ImageControl1.Bitmap.LoadFromStream(Aresource.Value.AsStream);
 end;
 
 procedure TForm4.TetheringManager1PairedFromLocal(const Sender: TObject;

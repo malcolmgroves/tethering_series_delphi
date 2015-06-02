@@ -14,6 +14,17 @@ inherited Form3_LgXhdpiTb: TForm3_LgXhdpiTb
       Size.Height = 28.000000000000000000
     end
   end
+  inherited ImageControl1: TImageControl
+    Size.Width = 321.000000000000000000
+    Size.Height = 329.000000000000000000
+    Size.PlatformDefault = False
+  end
+  inherited Button2: TButton
+    Position.X = 344.000000000000000000
+    Size.Width = 97.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+  end
   inherited TetheringAppProfile1: TTetheringAppProfile
     Actions = <
       item
